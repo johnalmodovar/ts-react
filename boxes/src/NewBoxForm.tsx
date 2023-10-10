@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { v4 as uuid } from 'uuid';
-import { BoxInterface } from "./interface";
+import { BoxInterface, NewBoxFormData } from "./interface";
+
+interface NewBoxFormProps {
+  createBox(arg0: BoxInterface): void;
+}
 
 /** Form for adding box.
  *
@@ -13,8 +17,8 @@ import { BoxInterface } from "./interface";
  * BoxList -> NewBoxForm
  */
 
-function NewBoxForm({ createBox }) {
-  const [formData, setFormData] = useState<BoxInterface>({
+function NewBoxForm({ createBox }: NewBoxFormProps) {
+  const [formData, setFormData] = useState<NewBoxFormData>({
     height: "",
     width: "",
     backgroundColor: "",

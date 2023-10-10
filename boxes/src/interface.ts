@@ -1,7 +1,7 @@
 /** Interfaces for Box App. */
 
 interface BoxInterface {
-  id?: string;
+  id: string;
   width: number | string;
   height: number | string;
   backgroundColor: string;
@@ -11,4 +11,10 @@ interface BoxPropsInterface extends BoxInterface {
   remove(id: string): void;
 }
 
-export type { BoxInterface, BoxPropsInterface };
+interface NewBoxFormData {
+    width: number | string;
+    height: number | string;
+    backgroundColor: string;
+}
+
+export type { BoxInterface, BoxPropsInterface, NewBoxFormData };
